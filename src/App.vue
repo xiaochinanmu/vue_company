@@ -1,26 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="common-layout">
+      <Header/>
+      <el-container >
+        <Aside />
+        <el-main :style="{ border: '1px solid #000'}"><router-view /></el-main>
+        <!--  <Validate/>  主体-->
+      </el-container>
+   
+  </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+//import myHelloWor from './components/HelloWorld.vue'
+import Header from "./components/Header";
+import Aside from "./components/Aside";
+//import Validate from "./components/validate";
 export default {
   name: 'App',
   components: {
-    HelloWorld
+
+    Header,
+    Aside,
+    //Validate
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+
